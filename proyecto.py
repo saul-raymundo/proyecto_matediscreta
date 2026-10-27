@@ -9,14 +9,16 @@ conjuntB={}
 universal = {}
 while True:
     diseñotext("Trinomio","bienvenidos","*")
+    input()
     while True:
         #menu opciones
+        menuopcion("1-Union","2-Interseccion","3-Diferencia","4-complemento","*")
         opcion = int(input())
         if opcion == 1:
             print("ingresa valor")
             print("desea regresar S/N: ")
             back = input()
-            if back == "S":
+            if back == "s":
                 diseñotext("1. A inicio"," 2.Menu ","*")
                 dondereg = input()
                 if dondereg == "1":

@@ -14,4 +14,23 @@ def diseñotext(text1,text2,marco):
             print(forma+'\n'+ arrib)#aca agrega dos enter y luego muestra el marco de abajo del recuadro
             break
 
-#def menuopcion():
+def menuopcion(tex1,text2,tex3,tex4,marcs):
+    arrib_ab = (marcs.ljust(50,marcs))#son los marcos de arriba
+    print(arrib_ab)
+    i = 0
+    while True:
+            forma = (marcs+ " " * 49 + marcs)#esta agrega los "*" a los costados mientras tiene 49 espacios dentro
+            print(forma)
+            i +=1
+            if i == 1:#siginifica que luego de dos lineas de espacios con asterisco se ejecuta lo siguiente
+                inf = tex1.center(47)
+                inf2 = text2.center(47)
+                inf3 = tex3.center(47)
+                inf4 = tex4.center(47)
+
+                print(marcs,inf,marcs)
+                print(marcs,inf2,marcs)
+                print(marcs,inf3,marcs)
+                print(marcs,inf4,marcs)
+                print(forma+'\n'+ arrib_ab)#aca agrega dos enter y luego muestra el marco de abajo del recuadro
+                break
