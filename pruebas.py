@@ -14,3 +14,4 @@ def diseñotext(text1,text2,marco):
             print(forma+'\n'+ arrib)#aca agrega dos enter y luego muestra el marco de abajo del recuadro
             break
 
+#def menuopcion():
