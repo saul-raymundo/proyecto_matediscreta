@@ -14,7 +14,7 @@ def diseñotext(text1,text2,marco):
             print(forma+'\n'+ arrib)#aca agrega dos enter y luego muestra el marco de abajo del recuadro
             break
 
-def menu_principal(tex1,tex2,tex3,mards):
+def menu_principal(tex1,tex2,tex3,tex4,mards):
     arrib_ab = (mards.ljust(50,mards))
     print(arrib_ab)
     i = 0
@@ -26,9 +26,11 @@ def menu_principal(tex1,tex2,tex3,mards):
             inf = tex1.center(47)
             inf2 = tex2.center(47)
             inf3 = tex3.center(47)
+            inf4 = tex4.center(47)
         print(mards,inf,mards)
         print(mards,inf2,mards)
         print(mards,inf3,mards)
+        print(mards,inf4,mards)
         print(forma+'\n'+ arrib_ab)#aca agrega dos enter y luego muestra el marco de abajo del recuadro
         break
 
