@@ -54,3 +54,12 @@ def menuopcion(tex1,text2,tex3,tex4,marcs):
                 print(marcs,inf4,marcs)
                 print(forma+'\n'+ arrib_ab)#aca agrega dos enter y luego muestra el marco de abajo del recuadro
                 break
+
+def dondeir(quedicid):
+    if quedicid == "1":
+        
+        return False,False,False
+    elif quedicid == "2":
+        return False,True,True
+    else:
+        return "ERROR tienes que decidir a donde ir"

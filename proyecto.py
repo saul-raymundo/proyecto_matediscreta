@@ -1,8 +1,8 @@
 import cv2
 import glob
 from pruebas import *
-#buscamos todos los balores de imagenes con .jpg
-lista_imagen = glob.glob("*.jpg")
+
+
 
 conjuntA = {}
 conjuntB={}
@@ -27,23 +27,70 @@ while principal:
                         if opcion == 1:
                             #para que ingrese los valores de los conjuntos
                             
-                            print("desea regresar S/N: ")
+                            diseñotext("DESEA","REGRESAR-S/N-","*")
                             back = input()
                             if back.lower() == "s":
                                 diseñotext("1. A inicio"," 2.Menu opciones ","*")
                                 dondereg = input()
-                                if dondereg == "1":
-                                    activ2 = False
-                                    activ1 = False 
-                                    activo = False
-                                elif dondereg == "2":
-                                    activ2 = False 
-                                else:
-                                    print("ERROR tienes que decidir a donde ir")
+                                activ2,activ1,activo = dondeir(dondereg)
                             elif back.lower() == "n":
-                                activ2 = False,activ1 = False , activo = False,principal = False  
+                                activ2 = activ1 = activo = principal = False  
                         elif opcion == 2:
-                            
+                            #para que ingrese los valores de los conjuntos
+
+
+                            diseñotext("DESEA","REGRESAR-S/N-","*")
+                            back = input()
+                            if back.lower() == "s":
+                                diseñotext("1. A inicio"," 2.Menu opciones ","*")
+                                dondereg = input()
+                                activ2,activ1,activo = dondeir(dondereg)
+                            elif back.lower() == "n":
+                                activ2 = activ1 = activo = principal = False  
+                        elif opcion == 3:
+                            #para que ingrese los valores de los conjuntos
+                        
+                        
+                            diseñotext("DESEA","REGRESAR -S/N-","*")
+                            back = input()
+                            if back.lower() == "s":
+                                diseñotext("1. A inicio"," 2.Menu opciones ","*")
+                                dondereg = input()
+                                activ2,activ1,activo = dondeir(dondereg)
+                            elif back.lower() == "n":
+                                activ2 = activ1 = activo = principal = False  
+
+                        elif opcion == 4:
+                            #para que ingrese los valores de los conjuntos
+
+
+                            diseñotext("DESEA","REGRESAR -S/N-","*")
+                            back = input()
+                            if back.lower() == "s":
+                                diseñotext("1. A inicio"," 2.Menu opciones ","*")
+                                dondereg = input()
+                                activ2,activ1,activo = dondeir(dondereg)
+                            elif back.lower() == "n":
+                                activ2 = activ1 = activo = principal = False          
+
+            elif opcionn == "3":
+                #buscamos todas imagenes con .jpeg y creamos una lista con sus direcciones
+                lista_imagen = glob.glob("*.jpeg")
+                for ruta in lista_imagen:
+                    imagen = cv2.imread(ruta)
+                    if imagen is not None:
+                        # Redimensionar para asegurar que quepa en la pantalla
+                        imagen_redimensionada = cv2.resize(imagen, (800, 600))
+                        cv2.imshow('Visor', imagen_redimensionada)
+                        
+                        # El programa se pausa aquí; presiona cualquier tecla para ver la siguiente foto
+                        cv2.waitKey(0)
+
+                # Cierra la ventana al terminar de recorrer toda la lista
+                cv2.destroyAllWindows()
+
+print("GRACIAS POR EJECUTAR NUESTRO SISTEMA")
+                                
                     
         
     
