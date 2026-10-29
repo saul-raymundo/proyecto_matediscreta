@@ -2,11 +2,6 @@ import cv2
 import glob
 from pruebas import *
 
-
-
-conjuntA = {}
-conjuntB={}
-universal = {}
 principal = True
 while principal:
     activo=activ1 = True
@@ -25,8 +20,12 @@ while principal:
                         menuopcion("1-Union","2-Interseccion","3-Diferencia","4-complemento","*")
                         opcion = int(input())
                         if opcion == 1:
-                            #para que ingrese los valores de los conjuntos
-                            
+                            # El usuario ingresa, por ejemplo: 10, 20, 20, 30
+                            conjunto1 = input("Ingresa los valores del concjunto 1: \n")
+                            conjunto2 = input("Ingresa los valores del conjunto 2: \n")
+                            resultad = opreac_conjunt(conjunto1,"union",conjunto2)
+                            diseñotext("EL RESULTADO ES:",str(resultad),"*")
+                            input()
                             diseñotext("DESEA","REGRESAR-S/N-","*")
                             back = input()
                             if back.lower() == "s":
@@ -36,8 +35,12 @@ while principal:
                             elif back.lower() == "n":
                                 activ2 = activ1 = activo = principal = False  
                         elif opcion == 2:
-                            #para que ingrese los valores de los conjuntos
 
+                            #para que ingrese los valores de los conjuntos
+                            conjunto1 = input("Ingresa los valores del concjunto 1: \n")
+                            conjunto2 = input("Ingresa los valores del conjunto 2: \n")
+                            resultado = opreac_conjunt(conjunto1,"interseccion",conjunto2)
+                            diseñotext("EL RESULTADO ES:",str(resultado),"*")
 
                             diseñotext("DESEA","REGRESAR-S/N-","*")
                             back = input()
@@ -47,10 +50,14 @@ while principal:
                                 activ2,activ1,activo = dondeir(dondereg)
                             elif back.lower() == "n":
                                 activ2 = activ1 = activo = principal = False  
+
                         elif opcion == 3:
                             #para que ingrese los valores de los conjuntos
-                        
-                        
+                            conjunto1 = input("Ingresa los valores del concjunto 1: \n")
+                            conjunto2 = input("Ingresa los valores del conjunto 2: \n")
+                            resulta = opreac_conjunt(conjunto1,"diferencia",conjunto2)
+                            diseñotext("EL RESULTADO ES:",str(resulta),"*")
+
                             diseñotext("DESEA","REGRESAR -S/N-","*")
                             back = input()
                             if back.lower() == "s":
@@ -62,7 +69,10 @@ while principal:
 
                         elif opcion == 4:
                             #para que ingrese los valores de los conjuntos
-
+                            conjunto1 = input("Ingresa los valores del concjunto 1: \n")
+                            conjunto2 = input("Ingresa los valores del conjunto 2: \n")
+                            regist = opreac_conjunt(conjunto1,"complemento",conjunto2)
+                            diseñotext("EL RESULTADO ES:",str(regist),"*")
 
                             diseñotext("DESEA","REGRESAR -S/N-","*")
                             back = input()
@@ -88,8 +98,8 @@ while principal:
 
                 # Cierra la ventana al terminar de recorrer toda la lista
                 cv2.destroyAllWindows()
+menuopcion("GRACIAS POR","EJECUTAR","NUESTRO","PROGRAMA","*")
 
-print("GRACIAS POR EJECUTAR NUESTRO SISTEMA")
                                 
                     
         

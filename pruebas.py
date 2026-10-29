@@ -63,3 +63,32 @@ def dondeir(quedicid):
         return False,True,True
     else:
         return "ERROR tienes que decidir a donde ir"
+
+    
+def opreac_conjunt(conjunt1,opreacion,conjunt2):
+    if opreacion == "union":
+        # Separamos el texto, convertimos a enteros (int) y creamos el conjunto
+        conjunto_1 = set([int(x) for x in conjunt1.split(",")])
+        conjunto_2 = set([int(x) for x in conjunt2.split(",")])
+        union = conjunto_1 | conjunto_2
+        return union
+    elif opreacion == "iterseccion":
+        conjunto_i = set([int(x) for x in conjunt1.split(",")])
+        conjunto_i2 = set([int(x) for x in conjunt2.split(",")])
+        interseccion = conjunto_i & conjunto_i2
+        return interseccion
+    elif opreacion == "diferencia":
+        conju_d1 = set([int(x) for x in conjunt1.split(",")])
+        conj_d2 = set([int(x) for x in conjunt2.split(",")])
+        diferencia = conju_d1 - conj_d2
+        return diferencia
+    elif opreacion == "complemento":
+        conj_universal = set([int(x) for x in conjunt1.split(",")])
+        conj_A = set([int(x) for x in conjunt2.split(",")])
+        complemento = conj_universal - conj_A
+        return complemento
+
+
+
+   
+    
