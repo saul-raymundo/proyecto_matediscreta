@@ -90,14 +90,23 @@ while principal:
                     imagen = cv2.imread(ruta)
                     if imagen is not None:
                         # Redimensionar para asegurar que quepa en la pantalla
-                        imagen_redimensionada = cv2.resize(imagen, (800, 600))
-                        cv2.imshow('Visor', imagen_redimensionada)
+                        imagen_redimensionada = cv2.resize(imagen, (400, 600))
+                        cv2.imshow('INTEGRANTES GRUPO', imagen_redimensionada)
                         
                         # El programa se pausa aquí; presiona cualquier tecla para ver la siguiente foto
                         cv2.waitKey(0)
 
                 # Cierra la ventana al terminar de recorrer toda la lista
                 cv2.destroyAllWindows()
+                input()
+                diseñotext("DESEA","REGRESAR -S/N-","*")
+                back = input()
+                if back.lower() == "s":
+                    diseñotext("1. A inicio"," 2.Menu opciones ","*")
+                    dondereg = input()
+                    activ2,activ1,activo = dondeir(dondereg)
+                elif back.lower() == "n":
+                                activ2 = activ1 = activo = principal = False
 menuopcion("GRACIAS POR","EJECUTAR","NUESTRO","PROGRAMA","*")
 
                                 
